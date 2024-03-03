@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once '../Master Admin/Config/config.php';
 
