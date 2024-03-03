@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
             <script>
                 Swal.fire({
                     title: "Error",
-                    text: "Somting went wrong! Please try again.",
+                    text: "Something went wrong! Please try again.",
                     icon: "error"
                 });
             </script>

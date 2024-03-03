@@ -20,6 +20,7 @@
   --toggle-color: #ddd;
   --text-color: #707070;
   --nav-bg-color: #ffdba6;
+  --error-color: red;
 
   /* ======Shodow ======*/
   --first-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -56,6 +57,10 @@ body.dark {
   margin-bottom: 20px;
 }
 
+.input-group {
+  position: relative;
+}
+
 .input-field {
   width: 100%;
   height: 45px;
@@ -72,9 +77,21 @@ body.dark {
   transition: 0.3s;
 }
 
-input:hover {
+input:focus {
   background-color: var(--body-color);
   border: 2px solid var(--primary-color);
+}
+
+.input-error {
+  border: 2px solid var(--error-color);
+}
+
+.error-message {
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  font-size: 13px;
+  color: var(--error-color);
 }
 
 .button-1 {
@@ -99,4 +116,18 @@ input:hover {
   border-radius: 5px;
   box-shadow: var(--first-shadow);
   padding: 30px;
+  margin-bottom: 20px;
+}
+
+.password-div {
+  position: relative;
+}
+
+.password-div i {
+  position: absolute;
+  font-size: 18px;
+  right: 10px;
+  top: 13.5px;
+  color: gray;
+  cursor: pointer;
 }
