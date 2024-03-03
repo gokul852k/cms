@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to CMS</title>
-    <link rel="stylesheet" href="./Admin/css/login.css">
+    <link rel="stylesheet" href="../Admin/css/main.css">
+    <link rel="stylesheet" href="../Admin/css/login.css">
     <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
         href="/css/app-wa-02670e9412103b5852dcbe140d278c49.css?vsn=d">
 
