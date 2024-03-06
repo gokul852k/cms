@@ -1,4 +1,5 @@
 <?php
+session_save_path($_SERVER['DOCUMENT_ROOT'] . '/CMS/Driver/session_folder1');
 session_start();
 require_once '../Master Admin/Config/config.php';
 // unset($_SESSION['token']);
