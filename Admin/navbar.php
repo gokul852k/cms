@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.min.js" integrity="sha512-WHVh4oxWZQOEVkGECWGFO41WavMMW5vNCi55lyuzDBID+dHg2PIxVufsguM7nfTYN3CEeQ/6NB46FWemzpoI6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -71,12 +73,12 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class="fa-duotone fa-chart-pyramid icon"></i>
-                            <span class="text nav-text">Daily Report</span>
+                            <span class="text nav-text">Diesel Report</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="register_company.php">
                             <i class="fa-duotone fa-hexagon-plus icon"></i>
                             <span class="text nav-text">Register Company</span>
                         </a>
@@ -89,13 +91,26 @@
                         </a>
                     </li>
 
+                    <li class="nav-link">
+                        <a href="./driver_details.php">
+                        <i class="fa-duotone fa-id-card icon"></i>
+                            <span class="text nav-text">Driver Details</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="./addvehicle.php">
+                            <i class="fa-duotone fa-car icon"></i>
+                            <span class="text nav-text">Add Vehicle</span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="./logout.php">
                         <!-- <i class='bx bx-log-out icon'></i> -->
                         <i class="fa-duotone fa-arrow-right-from-bracket icon"></i>
                         <span class="text nav-text">Logout</span>

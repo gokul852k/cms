@@ -1,50 +1,154 @@
 <?php
 require_once './login_check.php';
 require_once './navbar.php';
+
+$stmt = $conn->prepare("SELECT * FROM `vehicle` WHERE `company_id`=:company_id AND `flag`=:flag");
+
+$companyId = $_SESSION['companyId'];
+
+$flag = 0;
+
+$stmt->bindParam(':company_id', $companyId);
+$stmt->bindParam(':flag', $flag);
+
+$stmt->execute();
+
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt1 = $conn->prepare("SELECT * FROM `sub_company` WHERE `company_id`=:company_id AND `flag`=:flag");
+
+$stmt1->bindParam(':company_id', $companyId);
+$stmt1->bindParam(':flag', $flag);
+
+$stmt1->execute();
+
+$rows2 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
+<link rel="stylesheet" href="./css/driver.css">
+
 <div class="register-driver">
-    <form action="./createcompany.php" method="post">
-        <div class="container box-container">
+    <form action="./insertdriver.php" method="post" enctype="multipart/form-data">
+        <div class="container box-container w3-animate-top">
             <div class="row">
                 <h4 class="heading">Driver Details</h4>
             </div>
             <div class="row">
                 <div class="col-sm-4">
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url(./image/manager.png);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
                     <input type="text" class="input-field" name="fullname" placeholder="Full Name" />
+                    <input type="number" class="input-field" name="mobile" placeholder="Mobile Number" />
+                    <input type="text" class="input-field" name="username" placeholder="Username" />
                 </div>
                 <div class="col-sm-4">
                     <input type="email" class="input-field" name="email" placeholder="Mail ID" />
-                </div>
-                <div class="col-sm-4">
-                    <input type="number" class="input-field" name="mobile" placeholder="Mobile Number" />
+                    <select class="input-field" id="vehicle-no" name="vehicle-no">
+                        <option value="">--Select Vehicle No--</option>
+                        <?php
+                        foreach ($rows as $row) {
+                            ?>
+                            <option value="<?= $row['vehicle_id'] ?>">
+                                <?= $row['vehicle_number'] ?>
+                            </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                    <input type="text" class="input-field" name="password" placeholder="Password" />
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <textarea class="input-field" rows="2" name="address" placeholder="Address"></textarea>
+                <div class="col-sm-4">
+                    <select class="input-field" id="company" name="company">
+                        <option value="">--Select Company--</option>
+                        <?php
+                        foreach ($rows2 as $row) {
+                            ?>
+                            <option value="<?= $row['sub_company_id'] ?>">
+                                <?= $row['company_name'] ?>
+                            </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="col-sm-8">
+                    <input type="text" class="input-field" name="address" placeholder="Address" />
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="text" class="input-field" name="state" placeholder="State" />
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="input-field" name="district" placeholder="District" />
+                </div>
+                <div class="col-sm-4">
+                    <input type="number" class="input-field" name="pincode" placeholder="Pin Code" />
+                </div>
+            </div>
+
         </div>
-        <div class="container box-container">
+        <div class="container box-container w3-animate-bottom">
             <div class="row">
                 <h4 class="heading">Documents</h4>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <input type="text" class="input-field" name="fullname" placeholder="Full Name" />
+                <div class="col-sm-3 double-input">
+                    <label for="exampleFormControlFile1" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Upload Driving Licence</span>
+                        <br>
+                        <input type="file" class="form-control-file" id="driving-licence" name="driving-licence" accept="image/*,.pdf" />
+                    </label>
+                    <input type="text" class="input-field" name="driving-licence-no"
+                        placeholder="Driving Licence Number" />
+                        <label for="" class="input-label">Licence Expiry Date</label>
+                        <input type="date" class="input-field" name="licence-expiry" />
+                        
                 </div>
-                <div class="col-sm-4">
-                    <input type="email" class="input-field" name="email" placeholder="Mail ID" />
+                <div class="col-sm-3 double-input">
+                    <label for="exampleFormControlFile1" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Upload Insurance</span>
+                        <br>
+                        <input type="file" class="form-control-file" id="insurance" name="insurance"
+                            accept="image/*,.pdf" />
+                    </label>
+                    <input type="number" class="input-field" name="insurance-no" placeholder="Insurance Number" />
+                    <label for="" class="input-label">Insurance Expiry Date</label>
+                    <input type="date" class="input-field" name="insurance-expiry" />
                 </div>
-                <div class="col-sm-4">
-                    <input type="number" class="input-field" name="mobile" placeholder="Mobile Number" />
+                <div class="col-sm-3 double-input">
+                    <label for="exampleFormControlFile1" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Upload Aadhar Card</span>
+                        <br>
+                        <input type="file" class="form-control-file" id="aadhar-card" name="aadhar-card"
+                            accept="image/*,.pdf" />
+                    </label>
+                    <input type="number" class="input-field" name="aadhar-no" placeholder="Aadhar Number" />
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <textarea class="input-field" rows="2" name="address" placeholder="Address"></textarea>
+                <div class="col-sm-3 double-input">
+                    <label for="exampleFormControlFile1" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Upload PAN Card</span>
+                        <br>
+                        <input type="file" class="form-control-file" id="pan-card" name="pan-card"
+                            accept="image/*,.pdf" />
+                    </label>
+                    <input type="text" class="input-field" name="pan-no" placeholder="PAN Number" />
                 </div>
+
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -53,8 +157,24 @@ require_once './navbar.php';
             </div>
         </div>
     </form>
-
 </div>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function () {
+        readURL(this);
+    });
+</script>
 
 <?php
 require_once './footer.php';

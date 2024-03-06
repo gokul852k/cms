@@ -112,9 +112,9 @@
                         data: formData,
                         dataType: 'json',
                         success: function (response) {
-                            if (response.success) {
+                            if (response.success === true) {
                                 window.location.href = 'home.php';
-                            } else {
+                            } else if(response.success === false){
                                 $('#username').addClass('input-error');
                                 $('#password').addClass('input-error');
                                 Swal.fire({
@@ -122,6 +122,8 @@
                                     text: "Invalid username or password",
                                     icon: "error"
                                 });
+                            } else if (response.success == 'redirect') {
+                                window.location.href = response.url;
                             }
                         },
                         error: function (xhr, status, error) {

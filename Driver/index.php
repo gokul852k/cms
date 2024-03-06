@@ -1,3 +1,8 @@
+<?php
+if (isset($_COOKIE['remember_me']) && !isset($_SESSION['token'])) {
+    header('Location: home.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
