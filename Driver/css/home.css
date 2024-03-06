@@ -1,0 +1,52 @@
+
+.car{
+    width: 40%;
+    padding: 4%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.text{
+    margin-bottom: 2%;
+}
+@media(max-width: 750px) {
+    .car{
+        width: 70%;
+        padding: 4%;    
+    }
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+@media(max-width: 400px) {
+    .car{
+        width: 90%;
+        padding: 4%;    
+    }
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* For WebKit (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
