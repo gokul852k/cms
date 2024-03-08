@@ -181,7 +181,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 } else {
-    $response = array('success' => false, 'message' => 'Invalid request');
-    echo json_encode($response);
+    echo '
+            <script>
+                Swal.fire({
+                    title: "Error",
+                    text: "Invalid request! Please try again.",
+                    icon: "error"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "register_driver.php";
+                    }
+                });
+            </script>
+        ';
 }
 

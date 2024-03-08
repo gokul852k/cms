@@ -27,6 +27,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.css" />
+
+<script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
 </head>
 
 <body>
@@ -57,21 +61,21 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="./dashboard.php">
                             <i class='bx bxs-dashboard icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="daily_report.php">
                             <i class="fa-duotone fa-chart-simple icon"></i>
                             <span class="text nav-text">Daily Report</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="diesel_report.php">
                             <i class="fa-duotone fa-chart-pyramid icon"></i>
                             <span class="text nav-text">Diesel Report</span>
                         </a>

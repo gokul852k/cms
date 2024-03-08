@@ -1,0 +1,10 @@
+@import url(./main.css);
+
+.card-row-d-r {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-col-d-r {
+    width: 100%;
+}

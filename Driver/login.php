@@ -34,7 +34,9 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
                 setcookie('remember_me', $token, time() + (50 * 365 * 24 * 60 * 60)); // Cookie expires in 50 years
                 
                 $_SESSION['username'] = $username;
+                $_SESSION['driverId'] = $row['driver_id'];
                 $_SESSION['companyId'] = $row['company_id'];
+                $_SESSION['subCompanyId'] = $row['sub_company_id'];
                 $_SESSION['fullname'] = $row['fullname'];
                 $_SESSION['mail'] = $row['mail'];
                 $_SESSION['mobile'] = $row['mobile'];

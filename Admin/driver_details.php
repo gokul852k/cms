@@ -16,70 +16,111 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <link rel="stylesheet" href="./css/driver.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.css" />
-
-<script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+<link rel="stylesheet" href="./css/report.css">
 <style>
     h2 {
         text-align: center;
         padding: 20px 0;
     }
-
-    table {
-        border-collapse: collapse;
-        /* Collapse the borders */
-        border-radius: 7px;
-        /* Set border-radius for the table */
-        overflow: hidden;
-        /* Ensure the border-radius is applied properly */
-        width: 100%;
-        /* Set table width to 100% */
-        border-bottom: none;
-        /* Hide the bottom border */
-        border-bottom: 2px solid ghostwhite;
-    }
-
-    th,
-    td {
-        border: none;
-        font-size: 15px;
-    }
-
-    tr {
-        border: none;
-    }
-
-    .th {
-        background-color: var(--primary-color) !important;
-        color: white !important;
-        font-weight: 600 !important;
-    }
-
-    tr:nth-child(even) td {
-        background-color: #fff6e7;
-        /* Set background color for odd rows */
-    }
-
-    .dt-column-order {
-        color: black;
-    }
-
-    .dt-length label {
-        display: none;
-    }
-
-    div.dt-container.dt-empty-footer tbody>tr:last-child>* {
-        border-bottom: none;
-    }
-
-    div.dt-container.dt-empty-footer .dt-scroll-body {
-        border-bottom: none;
-    }
 </style>
 
 <div class="register-driver">
+    <div class="container box-container box-head w3-animate-top">
+        <div class="row row-head">
+            <div class="">
+                <h4 class="heading">Driver Details</h4>
+            </div>
+            <div class="row-head-div-2">
+                <button class="button-1 head-button2">Export<i class="fa-duotone fa-download"></i></button>
+            </div>
+        </div>
+    </div>
     <div class="container box-container w3-animate-top">
-    <div class="row">
+        <div class="row row-head">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 card-row-d-r">
+                        <div class="col card-col-d-r">
+                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                <a href="#" class="no-underline">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-secondary">Total Drivers</p>
+                                                <h4 class="my-1 text-info">20</h4>
+                                            </div>
+                                            <div
+                                                class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                                <i class="fa-solid fa-inbox-in"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col card-col-d-r">
+                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                <a href="#" class="no-underline">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-secondary">Drivers</p>
+                                                <h4 class="my-1 text-info t-c-2">15</h4>
+                                            </div>
+                                            <div
+                                                class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
+                                                <i class="fa-solid fa-inbox-out"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col card-col-d-r">
+                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                <a href="#" class="no-underline">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-secondary">Active Drivers</p>
+                                                <h4 class="my-1 text-info t-c-5">5</h4>
+                                            </div>
+                                            <div
+                                                class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col card-col-d-r">
+                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                <a href="#" class="no-underline">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-secondary">Active Drivers</p>
+                                                <h4 class="my-1 text-info t-c-3">18</h4>
+                                            </div>
+                                            <div
+                                                class="widgets-icons-2 rounded-circle  bg-gradient-blooker text-white ms-auto">
+                                                <i class="fa-solid fa-car-mirrors"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container box-container w3-animate-top">
+        <div class="row">
             <h4 class="heading">Driver Details</h4>
         </div>
         <div class="row">
@@ -120,7 +161,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container box-container w3-animate-bottom">
         <div class="row">
             <div class="container">

@@ -22,6 +22,8 @@
   --nav-bg-color: #ffdba6;
   --error-color: red;
 
+  --input-border: #ffc774;
+
   /* ======Shodow ======*/
   --first-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 
@@ -56,6 +58,18 @@ body.dark {
   color: var(--primary-color);
   margin-bottom: 25px;
   font-weight: 500;
+}
+
+.admin-logo {
+  width: 40px;
+  border-radius: 100%;
+}
+
+.admin-logo-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .input-group {
@@ -103,6 +117,11 @@ input:focus {
 }
 
 .button-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   width: 100%;
   height: 45px;
   border: none;
@@ -124,7 +143,7 @@ input:focus {
   border-radius: 5px;
   box-shadow: var(--first-shadow);
   padding: 30px !important;
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 .password-div {
@@ -139,6 +158,7 @@ input:focus {
   color: gray;
   cursor: pointer;
 }
+
 /* File input Style */
 .drop-container {
   position: relative;
@@ -212,7 +232,7 @@ input:focus {
 }
 
 .centered-div {
-  width: 30vw;
+  width: 28vw;
 }
 
 /* Tav view */
@@ -225,7 +245,7 @@ input:focus {
 /* Mobile view */
 @media only screen and (max-width: 450px) {
   .centered-div {
-    width: 95vw;
+    width: 100vw;
   }
 }
 
@@ -249,4 +269,105 @@ input:focus {
 }
 .delete {
   color: red;
+}
+
+table {
+  border-collapse: collapse;
+  /* Collapse the borders */
+  border-radius: 7px;
+  /* Set border-radius for the table */
+  overflow: hidden;
+  /* Ensure the border-radius is applied properly */
+  width: 100%;
+  /* Set table width to 100% */
+  border-bottom: none;
+  /* Hide the bottom border */
+  border-bottom: 2px solid ghostwhite;
+}
+
+th {
+  border: none;
+  font-size: 14px;
+}
+td {
+  border: none;
+  font-size: 15px;
+  color: var(--text-color) !important;
+}
+
+tr {
+  border: none;
+}
+
+.th {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  
+}
+
+tr:nth-child(even) td {
+  background-color: #fff6e7;
+  /* Set background color for odd rows */
+}
+
+.dt-column-order {
+  color: black;
+}
+
+.dt-length label {
+  display: none;
+}
+
+div.dt-container.dt-empty-footer tbody>tr:last-child>* {
+  border-bottom: none !important;
+}
+
+div.dt-container.dt-empty-footer .dt-scroll-body {
+  border-bottom: none !important;
+}
+
+div.dt-container .dt-search input {
+  padding: 7px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 0 0 6px 0;
+  -webkit-appearance: none;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+  margin: 0;
+}
+div.dt-container .dt-search input:focus {
+  border: none;
+}
+.dt-search label {
+  text-align: center;
+  padding: 7px 10px;
+  border-radius: 6px 0 0 0;
+  font-size: 14px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
+  border-bottom: none;
+}
+
+.dt-layout-row {
+  padding-bottom: 5px;
+}
+
+div.dt-container .dt-input {
+  padding: 7px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 0 0 6px 0;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
 }

@@ -1,15 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+@import url(../../Admin/css/main.css);
 
-body {
-  min-height: 100vh;
-  background: rgb(255, 249, 239);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
 .driver-nav {
   position: fixed;
