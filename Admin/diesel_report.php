@@ -39,7 +39,7 @@ require_once './navbar.php';
                                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 card-row-d-r">
                                     <div class="col card-col-d-r">
                                         <div class="card radius-10 border-start border-0 border-3 border-info">
-                                            <a href="./social_media_leads.php" class="no-underline">
+                                            <a href="#" class="no-underline">
                                                 <div class="card-body">
                                                     <div class="d-flex align-items-center">
                                                         <div>
@@ -48,7 +48,7 @@ require_once './navbar.php';
                                                         </div>
                                                         <div
                                                             class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto">
-                                                            <i class="fa-solid fa-location-dot"></i>
+                                                            <i class="fa-solid fa-indian-rupee-sign"></i>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -66,7 +66,7 @@ require_once './navbar.php';
                                                         </div>
                                                         <div
                                                             class="widgets-icons-2 rounded-circle  bg-gradient-blooker text-white ms-auto">
-                                                            <i class="fa-solid fa-car-mirrors"></i>
+                                                            <i class="fa-solid fa-chart-simple"></i>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -84,7 +84,7 @@ require_once './navbar.php';
                                                         </div>
                                                         <div
                                                             class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
-                                                            <i class="fa-solid fa-inbox-out"></i>
+                                                            <i class="fa-solid fa-gas-pump"></i>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -174,85 +174,74 @@ require_once './navbar.php';
                                     <th class="th">Driver Name</th>
                                     <th class="th">Company</th>
                                     <th class="th">Date</th>
-                                    <th class="th">Amount</th>
                                     <th class="th">Liters</th>
+                                    <th class="th">Amount</th>
                                     <th class="th">Bill</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                            <tr>
                                     <td>1</td>
-                                    <td>TN30M4037</td>
+                                    <td>TN27M4037</td>
                                     <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
+                                    <td>PicksPet Private limited</td>
+                                    <td>2024-03-09</td>
+                                    <td>25</td>
+                                    <td>2,225</td>
                                     <td class="th-btn">
                                         <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>TN30M4037</td>
-                                    <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
+                                    <td>2</td>
+                                    <td>TN30B6707</td>
+                                    <td>Yokesh</td>
+                                    <td>ZOHO Private limited</td>
+                                    <td>2024-03-09</td>
+                                    <td>30</td>
+                                    <td>2,700</td>
                                     <td class="th-btn">
                                         <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>TN30M4037</td>
-                                    <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
+                                    <td>3</td>
+                                    <td>TN29M2345</td>
+                                    <td>Arun</td>
+                                    <td>ZOHO Private limited</td>
+                                    <td>2024-03-09</td>
+                                    <td>35</td>
+                                    <td>3,150</td>
                                     <td class="th-btn">
                                         <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>TN30M4037</td>
-                                    <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
+                                    <td>4</td>
+                                    <td>TN30M3324</td>
+                                    <td>Raj</td>
+                                    <td>PicksPet Private limited</td>
+                                    <td>2024-03-09</td>
+                                    <td>30</td>
+                                    <td>2,700</td>
                                     <td class="th-btn">
                                         <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>TN30M4037</td>
-                                    <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>TN28M0947</td>
+                                    <td>Ravi Kumar</td>
+                                    <td>TCS</td>
+                                    <td>2024-03-09</td>
+                                    <td>25</td>
+                                    <td>2,225</td>
                                     <td class="th-btn">
                                         <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>TN30M4037</td>
-                                    <td>Gokulraj</td>
-                                    <td>PicksPet</td>
-                                    <td>2024-03-07</td>
-                                    <td>1500</td>
-                                    <td>20</td>
-                                    <td class="th-btn">
-                                        <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
