@@ -51,7 +51,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                             <div
                                                 class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
-                                                <i class="fa-solid fa-inbox-in"></i>
+                                                <i class="fa-solid fa-user-pilot"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                             <div
                                                 class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
-                                                <i class="fa-solid fa-inbox-out"></i>
+                                                <i class="fa-solid fa-users"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -82,12 +82,12 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-secondary">Active Drivers</p>
+                                                <p class="mb-0 text-secondary">Acting Drivers</p>
                                                 <h4 class="my-1 text-info t-c-5">5</h4>
                                             </div>
                                             <div
                                                 class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto">
-                                                <i class="fa-solid fa-location-dot"></i>
+                                                <i class="fa-solid fa-user-vneck"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                             <div
                                                 class="widgets-icons-2 rounded-circle  bg-gradient-blooker text-white ms-auto">
-                                                <i class="fa-solid fa-car-mirrors"></i>
+                                                <i class="fa-solid fa-user-check"></i>
                                             </div>
                                         </div>
                                     </div>
