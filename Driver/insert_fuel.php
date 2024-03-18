@@ -3,20 +3,21 @@ require_once './login_check.php';
 require_once './navbar.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $dieselLiter = $_POST['diesel-liter'];
-    $dieselAmt = $_POST['diesel-amt'];
+    $fuelType = $_POST['fuel_type'];
+    $fuelLiter = $_POST['fuel-liter'];
+    $fuelAmt = $_POST['fuel-amt'];
 
     $companyId = $_SESSION['companyId'];
     $subCompanyId = $_SESSION['subCompanyId'];
     $driverId = $_SESSION['driverId'];
 
-    $target_dir = "../Admin/diesel bill/"; // Directory where the files will be uploaded
+    $target_dir = "../Admin/fuel bill/"; // Directory where the files will be uploaded
 
     //<=========Drive Image Upload=========>
     $random_string = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 5); // Generate a random string of length 5
     $current_date_time = date("YmdHis"); // Current date and time
     $target_file_1 = $target_dir . $current_date_time . "_" . $random_string . "_" . basename($_FILES["billUpload"]["name"]);
-    $target_file = "diesel bill/" . $current_date_time . "_" . $random_string . "_" . basename($_FILES["billUpload"]["name"]);
+    $target_file = "fuel bill/" . $current_date_time . "_" . $random_string . "_" . basename($_FILES["billUpload"]["name"]);
     $uploadOk1 = 1;
     $imageFileType1 = strtolower(pathinfo($target_file_1, PATHINFO_EXTENSION));
 
@@ -31,13 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Here i leave one 😅BUG😅
         move_uploaded_file($_FILES["billUpload"]["tmp_name"], $target_file_1); //this function return true or false
         try {
-            $stmt = $conn->prepare("INSERT INTO `diesel_report` (`company_id`, `sub_company_id`, `driver_id`, `diesel_liters`, `diesel_amount`, `diesel_bill`) VALUES (:companyId, :subCompanyId, :driverId, :dieselLiter, :dieselAmt, :bill)");
+            $stmt = $conn->prepare("INSERT INTO `fuel_report` (`company_id`, `sub_company_id`, `driver_id`, `fuel_type`, `fuel_liters`, `fuel_amount`, `fuel_bill`) VALUES (:companyId, :subCompanyId, :driverId, :fuelType, :fuelLiter, :fuelAmt, :bill)");
 
             $stmt->bindParam(':companyId', $companyId);
             $stmt->bindParam(':subCompanyId', $subCompanyId);
             $stmt->bindParam(':driverId', $driverId);
-            $stmt->bindParam(':dieselLiter', $dieselLiter);
-            $stmt->bindParam(':dieselAmt', $dieselAmt);
+            $stmt->bindParam(':fuelType', $fuelType);
+            $stmt->bindParam(':fuelLiter', $fuelLiter);
+            $stmt->bindParam(':fuelAmt', $fuelAmt);
             $stmt->bindParam(':bill', $target_file);
 
             $stmt->execute();
@@ -45,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
                 Swal.fire({
                     title: "Success",
-                    text: "Diesel details have been successfully uploaded.",
+                    text: "Fuel details have been successfully uploaded.",
                     icon: "success"
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -64,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         icon: "error"
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = "diesel.php";
+                            window.location.href = "fuel.php";
                         }
                     });
                 </script>
@@ -80,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     icon: "error"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "diesel.php";
+                        window.location.href = "fuel.php";
                     }
                 });
             </script>
@@ -97,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     icon: "error"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "diesel.php";
+                        window.location.href = "fuel.php";
                     }
                 });
             </script>
