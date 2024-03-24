@@ -46,7 +46,7 @@ require_once './login_check.php';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <textarea type="text" id="desc" name="repair-desc" class="form-control" placeholder="About Repair" rows="3" required></textarea>
+                    <textarea type="text" id="desc" name="repair-desc" class="form-control textarea" placeholder="About Repair" rows="3" required></textarea>
                     <span class="error-message" id="desc-error"></span>
                 </div>
             </div>

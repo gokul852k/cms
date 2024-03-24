@@ -38,6 +38,7 @@
         <li class="dis"  onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
         <li class="dis" ><a href="./home.php">Home</a></li>
         <li class="dis" ><a href="./fuel.php">Fuel Logs</a></li>
+        <li class="dis" ><a href="./maintenance.php">Maintenance</a></li>
         <li class="dis" ><a href="#">Contact</a></li>
         <li class="dis" ><a href="#">About</a></li>
         <li class="dis" ><a href="#">Help</a></li>
@@ -49,6 +50,7 @@
       <li class="lo-gos"><a href="#"><span class="logo"><i class="fa-solid fa-diamond"></i></span> SwiftSaaS</a></li>
       <li class="hideOnMobile" ><a href="./home.php">Home</a></li>
       <li class="hideOnMobile"><a href="./fuel.php">Fuel Logs</a></li>
+      <li class="hideOnMobile"><a href="./maintenance.php">Maintenance</a></li>
       <li class="hideOnMobile"><a href="#">Contact</a></li>
       <li class="hideOnMobile"><a href="#">About</a></li>
       <li class="hideOnMobile"><a href="#">Help</a></li>

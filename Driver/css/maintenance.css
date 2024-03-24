@@ -1,0 +1,12 @@
+.maintenance{
+    margin: 80px 0 0 100px;
+}
+
+.textarea{
+    width: 100%;
+    border: 2px solid #eee;
+    padding: 5px 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}

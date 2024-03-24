@@ -3,11 +3,11 @@ require_once './login_check.php';
 require_once './navbar.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $maintenancefault = $_POST['maintenance-fault'];
+    $maintenance_fault = $_POST['maintenance-fault'];
     $maintenance_repair = $_POST['maintenance-repair'];
     $repair_shop = $_POST['repair-shop'];
     $repair_desc = $_POST['repair-desc'];
-    $maintenanceamt = $_POST['maintenance-amt'];
+    $maintenance_amt = $_POST['maintenance-amt'];
 
     $companyId = $_SESSION['companyId'];
     $subCompanyId = $_SESSION['subCompanyId'];
@@ -34,14 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Here i leave one 😅BUG😅
         move_uploaded_file($_FILES["billUpload"]["tmp_name"], $target_file_1); //this function return true or false
         try {
-            $stmt = $conn->prepare("INSERT INTO `fuel_report` (`company_id`, `sub_company_id`, `driver_id`, `fuel_type`, `fuel_liters`, `fuel_amount`, `fuel_bill`) VALUES (:companyId, :subCompanyId, :driverId, :fuelType, :fuelLiter, :fuelAmt, :bill)");
+            $stmt = $conn->prepare("INSERT INTO `maintenance_report` (`company_id`, `sub_company_id`, `driver_id`, `maintenance_fault`, `maintenance_repair`, `repair_shop`, `repair_desc`, `maintenance_amt`, `maintenance_bill`) VALUES (:companyId, :subCompanyId, :driverId, :maintenance_fault, :maintenance_repair, :repair_shop, :repair_desc, :maintenance_amt, :bill)");
 
             $stmt->bindParam(':companyId', $companyId);
             $stmt->bindParam(':subCompanyId', $subCompanyId);
             $stmt->bindParam(':driverId', $driverId);
-            $stmt->bindParam(':fuelType', $fuelType);
-            $stmt->bindParam(':fuelLiter', $fuelLiter);
-            $stmt->bindParam(':fuelAmt', $fuelAmt);
+            $stmt->bindParam(':maintenance_fault', $maintenance_fault);
+            $stmt->bindParam(':maintenance_repair', $maintenance_repair);
+            $stmt->bindParam(':repair_shop', $repair_shop);
+            $stmt->bindParam(':repair_desc', $repair_desc);
+            $stmt->bindParam(':maintenance_amt', $maintenance_amt);
             $stmt->bindParam(':bill', $target_file);
 
             $stmt->execute();
@@ -49,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script>
                 Swal.fire({
                     title: "Success",
-                    text: "Fuel details have been successfully uploaded.",
+                    text: "Maintenance details have been successfully uploaded.",
                     icon: "success"
                 }).then((result) => {
                     if (result.isConfirmed) {
