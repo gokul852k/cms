@@ -95,7 +95,8 @@ svg{
 }
 
 .logo{
-  margin: 0 0 0 5px;
+  /* margin: 0 0 0 5px; */
+  padding-right: 10px;
 }
 .navdis .dis a{
   font-weight: bold;
