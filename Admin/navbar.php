@@ -43,7 +43,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">SwiftSaaS</span>
+                    <span class="name">AstronuX</span>
                     <span class="profession"></span>
                 </div>
             </div>
@@ -75,9 +75,16 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="diesel_report.php">
+                        <a href="fuel_report.php">
                             <i class="fa-duotone fa-chart-pyramid icon"></i>
-                            <span class="text nav-text">Diesel Report</span>
+                            <span class="text nav-text">Fuel Report</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="maintenance_report.php">
+                        <i class="fa-duotone fa-wrench-simple icon"></i>
+                            <span class="text nav-text">Maintenance Report</span>
                         </a>
                     </li>
 

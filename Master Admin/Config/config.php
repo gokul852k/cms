@@ -3,7 +3,7 @@
 $servername = "localhost"; // or your server IP address
 $username = "root";
 $password = "";
-$database = "cms";
+$database = "tms";
 
 try {
     // Create a PDO instance

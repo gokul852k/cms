@@ -6,27 +6,27 @@ require_once './navbar.php';
 <link rel="stylesheet" href="./css/report.css">
 <div class="daily-report">
     <div class="container box-container box-head w3-animate-top">
-        <form id="filter">
-            <div class="row row-head">
-                <div class="">
-                    <h4 class="heading">Daily Report</h4>
-                </div>
-                <div class="form-group">
-                    <span>From</span>
-                    <input type="date" name="from-date" id="from-date" class="form-field">
-                </div>
-                <div class="col-3 form-group">
-                    <input type="date" name="to-date" id="to-date" class="form-field">
-                    <span>To</span>
-                </div>
-                <div class="">
-                    <button class="button-1 head-button"><i class="fa-solid fa-filter"></i>Filter</button>
-                </div>
-                <div class="">
-                    <button class="button-1 head-button">Export<i class="fa-duotone fa-download"></i></button>
-                </div>
+
+        <div class="row row-head">
+            <div class="">
+                <h4 class="heading">Daily Report</h4>
             </div>
-        </form>
+            <div class="form-group">
+                <span>From</span>
+                <input type="date" name="from-date" id="from-date" class="form-field">
+            </div>
+            <div class="col-3 form-group">
+                <input type="date" name="to-date" id="to-date" class="form-field">
+                <span>To</span>
+            </div>
+            <div class="">
+                <button class="button-1 head-button"><i class="fa-solid fa-filter"></i>Filter</button>
+            </div>
+            <div class="export-div">
+                <a href="./excel/Report.xlsx"><button class="button-1 head-button">Export<i
+                            class="fa-duotone fa-download"></i></button></a>
+            </div>
+        </div>
     </div>
     <div class="container box-container w3-animate-top">
         <div class="row row-head">

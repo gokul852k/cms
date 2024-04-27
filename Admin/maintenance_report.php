@@ -3,6 +3,7 @@ require_once './login_check.php';
 require_once './navbar.php';
 
 ?>
+<link rel="stylesheet" href="./css/diesel.css">
 <link rel="stylesheet" href="./css/report.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js">
@@ -29,10 +30,8 @@ require_once './navbar.php';
 <div class="daily-report">
     <div class="container box-container box-head w3-animate-top">
         <div class="row row-head">
-            <div class="admin-logo-div">
-                <img src="https://media.licdn.com/dms/image/C5603AQEf1Sxd5ui8qg/profile-displayphoto-shrink_800_800/0/1661837805310?e=1715212800&v=beta&t=RjD0f4KSF5jVeYDRhpxe8GSegIuCiyis3H2SaHRIc8Q"
-                    alt="" class="admin-logo">
-                <h4 class="heading">Joe Transport</h4>
+            <div class="">
+                <h4 class="heading">Maintenance Report</h4>
             </div>
             <div class="form-group">
                 <span>From</span>
@@ -45,133 +44,19 @@ require_once './navbar.php';
             <div class="">
                 <button class="button-1 head-button"><i class="fa-solid fa-filter"></i>Filter</button>
             </div>
-        </div>
-    </div>
-    <div class="container box-container w3-animate-top">
-        <div class="row row-head">
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 card-row-d-r">
-                        <div class="col card-col-d-r">
-                            <div class="card radius-10 border-start border-0 border-3 border-info">
-                                <a href="#" class="no-underline">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <p class="mb-0 text-secondary">Total Vehicle</p>
-                                                <h4 class="my-1 text-info">60</h4>
-                                            </div>
-                                            <div
-                                                class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
-                                                <i class="fa-solid fa-car-mirrors"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col card-col-d-r">
-                            <div class="card radius-10 border-start border-0 border-3 border-info">
-                                <a href="#" class="no-underline">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <p class="mb-0 text-secondary">Total Drivers</p>
-                                                <h4 class="my-1 text-info t-c-2">70</h4>
-                                            </div>
-                                            <div
-                                                class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
-                                                <i class="fa-solid fa-user-pilot"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col card-col-d-r">
-                            <div class="card radius-10 border-start border-0 border-3 border-info">
-                                <a href="#" class="no-underline">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <p class="mb-0 text-secondary">Total company</p>
-                                                <h4 class="my-1 text-info t-c-5">3</h4>
-                                            </div>
-                                            <div
-                                                class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto">
-                                                <i class="fa-solid fa-building"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col card-col-d-r">
-                            <div class="card radius-10 border-start border-0 border-3 border-info">
-                                <a href="#" class="no-underline">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <p class="mb-0 text-secondary">Vehicle Usage</p>
-                                                <h4 class="my-1 text-info t-c-3">90%</h4>
-                                            </div>
-                                            <div
-                                                class="widgets-icons-2 rounded-circle  bg-gradient-blooker text-white ms-auto">
-                                                <i class="fa-solid fa-car-bolt"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
+            <div class="export-div">
+                <a href="./excel/Report.xlsx"><button class="button-1 head-button">Export<i class="fa-duotone fa-download"></i></button></a>
             </div>
         </div>
     </div>
 
     <div class="container d-chart">
         <div class="row">
-            <div class="col-5 w3-animate-left">
-                <div class="box-container tms-card">
-                    <div class="tms-card-head">
-                        <div><i class="fa-duotone fa-chart-pie-simple"></i></div>
-                        <div>Drivers Chart</div>
-                    </div>
-                    <div class="container tms-card-body" style="margin:0;height: 100%;width: 100%;">
-                        <div class="row row-head">
-                            <canvas id="myChart" style=""></canvas>
-
-                            <script>
-                                const xValues = ["Drivers", "Acting Drivers"];
-                                const yValues = [60, 10];
-                                const barColors = [
-                                    "rgba(26, 188, 156,1.0)",
-                                    "#f54ea2"
-                                ];
-
-                                new Chart("myChart", {
-                                    type: "doughnut",
-                                    data: {
-                                        labels: xValues,
-                                        datasets: [{
-                                            backgroundColor: barColors,
-                                            data: yValues
-                                        }]
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-7 w3-animate-right">
+            <div class="col-8 w3-animate-left">
                 <div class="box-container tms-card">
                     <div class="tms-card-head">
                         <div><i class="fa-duotone fa-chart-line-up"></i></div>
-                        <div>Total Cost</div>
+                        <div>Maintenance Cost</div>
                     </div>
                     <div class="container tms-card-body" style="margin:0;height: 100%;width: 100%;">
                         <div class="row row-head">
@@ -273,6 +158,60 @@ require_once './navbar.php';
                     </div>
                 </div>
             </div>
+            <div class="col-4 w3-animate-right">
+                <div class="box-container tms-card">
+                    <div class="tms-card-head">
+                        <div><i class="fa-duotone fa-chart-tree-map"></i></div>
+                        <div>Maintenance</div>
+                    </div>
+                    <div class="container tms-card-body" style="margin:0;height: 100%;width: 100%;">
+                        <div class="row row-head">
+                            <div class="content num-card">
+                                <div class="container-fluid">
+                                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 card-row-d-r">
+                                        <div class="col card-col-d-r">
+                                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                                <a href="#" class="no-underline">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <p class="mb-0 text-secondary">Total Amount</p>
+                                                                <h4 class="my-1 text-info t-c-5">4500</h4>
+                                                            </div>
+                                                            <div
+                                                                class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto">
+                                                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col card-col-d-r">
+                                            <div class="card radius-10 border-start border-0 border-3 border-info">
+                                                <a href="./social_media_leads.php" class="no-underline">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <p class="mb-0 text-secondary">Number of Vehicle</p>
+                                                                <h4 class="my-1 text-info t-c-3">20</h4>
+                                                            </div>
+                                                            <div
+                                                                class="widgets-icons-2 rounded-circle  bg-gradient-blooker text-white ms-auto">
+                                                                <i class="fa-solid fa-car-mirrors"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -288,48 +227,45 @@ require_once './navbar.php';
                             <thead>
                                 <tr>
                                     <th class="th">S.No</th>
-                                    <th class="th">Company Name</th>
-                                    <th class="th">Total Vehicle</th>
-                                    <th class="th">Total Drivers</th>
-                                    <th class="th">Total KM</th>
-                                    <th class="th">Total Fuel Cost</th>
-                                    <th class="th">Action</th>
+                                    <th class="th">Vehicle No</th>
+                                    <th class="th">Driver Name</th>
+                                    <th class="th">Company</th>
+                                    <th class="th">Date</th>
+                                    <th class="th">Repair</th>
+                                    <th class="th">Repair Shop</th>
+                                    <th class="th">Amount</th>
+                                    <th class="th">Bill</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
+                                    <td>TN27M4037</td>
+                                    <td>Gokulraj</td>
                                     <td>PicksPet Private limited</td>
-                                    <td>30</td>
-                                    <td>32</td>
-                                    <td>2600</td>
-                                    <td>234,000</td>
+                                    <td>2024-03-09</td>
+                                    <td>puncher</td>
+                                    <td>Balaji Mechanical</td>
+                                    <td>2,225</td>
                                     <td class="th-btn">
-                                        <button class="table-btn view"><i class="fa-duotone fa-eye"></i></button>
+                                        <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
+                                    <td>TN30B6707</td>
+                                    <td>Yokesh</td>
                                     <td>ZOHO Private limited</td>
-                                    <td>18</td>
-                                    <td>20</td>
-                                    <td>1750</td>
-                                    <td>157,500</td>
+                                    <td>2024-03-09</td>
+                                    <td>Oil Change</td>
+                                    <td>Mech Mechanical</td>
+                                    <td>2,700</td>
                                     <td class="th-btn">
-                                        <button class="table-btn view"><i class="fa-duotone fa-eye"></i></button>
+                                        <button class="table-btn view"><i class="fa-duotone fa-receipt"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>TCS</td>
-                                    <td>12</td>
-                                    <td>15</td>
-                                    <td>990</td>
-                                    <td>89,100</td>
-                                    <td class="th-btn">
-                                        <button class="table-btn view"><i class="fa-duotone fa-eye"></i></button>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
