@@ -3,7 +3,7 @@ require_once './login_check.php';
 require_once './navbar.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fuelType = $_POST['fuel_type'];
+    $fuelType = $_POST['fuel-type'];
     $fuelLiter = $_POST['fuel-liter'];
     $fuelAmt = $_POST['fuel-amt'];
 
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Here i leave one 😅BUG😅
         move_uploaded_file($_FILES["billUpload"]["tmp_name"], $target_file_1); //this function return true or false
         try {
-            $stmt = $conn->prepare("INSERT INTO `fuel_report` (`company_id`, `sub_company_id`, `driver_id`, `fuel_type`, `fuel_liters`, `fuel_amount`, `fuel_bill`) VALUES (:companyId, :subCompanyId, :driverId, :fuelType, :fuelLiter, :fuelAmt, :bill)");
+            $stmt = $conn->prepare("INSERT INTO `fuel_report` (`company_id`, `sub_company_id`, `driver_id`, `fuel_type`, `fuel_quantity`, `fuel_amount`, `fuel_bill`) VALUES (:companyId, :subCompanyId, :driverId, :fuelType, :fuelLiter, :fuelAmt, :bill)");
 
             $stmt->bindParam(':companyId', $companyId);
             $stmt->bindParam(':subCompanyId', $subCompanyId);
