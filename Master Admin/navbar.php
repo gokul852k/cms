@@ -37,7 +37,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">SwiftSaaS</span>
+                    <span class="name">AstronuX</span>
                     <span class="profession"></span>
                 </div>
             </div>
@@ -62,30 +62,9 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class="fa-duotone fa-chart-simple icon"></i>
-                            <span class="text nav-text">Daily Report</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class="fa-duotone fa-chart-pyramid icon"></i>
-                            <span class="text nav-text">Daily Report</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
+                        <a href="./createcompany.php">
                             <i class="fa-duotone fa-hexagon-plus icon"></i>
-                            <span class="text nav-text">Register Company</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class="fa-duotone fa-user-plus icon"></i>
-                            <span class="text nav-text">Register Driver</span>
+                            <span class="text nav-text">Create Company</span>
                         </a>
                     </li>
 
