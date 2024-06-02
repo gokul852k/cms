@@ -10,6 +10,7 @@ $subCompanyId = $_SESSION['subCompanyId'];
 $currentDate = date('Y-m-d');
 $flag = 0;
 
+// echo "SELECT * FROM `driver_daily_report` WHERE `company_id` = '$companyId' AND `sub_company_id` = '$subCompanyId' AND `driver_id` = '$driverId' AND `check_in_date` = '$currentDate' AND `check_out_date` IS NULL AND `check_out_time` IS NULL AND `check_out_km` IS NULL AND `flag` = '$flag' ORDER BY `daily_report_id` DESC LIMIT 1";
 $stmt = $conn->prepare("SELECT * FROM `driver_daily_report` WHERE `company_id` = :companId AND `sub_company_id` = :subCompanyId AND `driver_id` = :driverId AND `check_in_date` = :currentDate AND `check_out_date` IS NULL AND `check_out_time` IS NULL AND `check_out_km` IS NULL AND `flag` = :flag ORDER BY `daily_report_id` DESC LIMIT 1");
 
 $stmt->bindParam(':companId', $companyId);

@@ -47,7 +47,7 @@
     </ul>
 
     <ul>
-      <li class="lo-gos"><a href="#"><span class="logo"><i class="fa-solid fa-diamond"></i></span> SwiftSaaS</a></li>
+      <li class="lo-gos"><a href="#"><span class="logo"><i class="fa-solid fa-diamond"></i></span> Astronu<span class="first-color">X</a></li>
       <li class="hideOnMobile" ><a href="./home.php">Home</a></li>
       <li class="hideOnMobile"><a href="./fuel.php">Fuel Logs</a></li>
       <li class="hideOnMobile"><a href="./maintenance.php">Maintenance</a></li>
