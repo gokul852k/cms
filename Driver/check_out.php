@@ -1,3 +1,4 @@
+
 <?php
     require_once './login_check.php';
 
@@ -29,7 +30,7 @@
             $stmt->bindParam(':currentDate', $currentDate);
 
             $stmt->execute();
-            $response = array('success' => true, 'message' => 'Check in Successfully.');
+            $response = array('success' => true, 'message' => 'Check out Successfully.');
         } catch (PDOException $e) {
             // echo "Error: " . $e->getMessage();
             $response = array('success' => false, 'message' => 'Something went wrong! Please try again.');

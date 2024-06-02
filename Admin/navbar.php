@@ -115,6 +115,12 @@
                             <span class="text nav-text">Add Vehicle</span>
                         </a>
                     </li>
+                    <li class="nav-link">
+                        <a href="./contactus.php">
+                        <i class="fa-duotone fa-circle-info icon"></i>
+                            <span class="text nav-text">Contact Us</span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
