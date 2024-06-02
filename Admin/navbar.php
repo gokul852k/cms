@@ -38,12 +38,12 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <!-- <img src="logo.png" alt=""> -->
-                    <i class="fa-solid fa-diamond"></i>
+                    <img src="./svg/AstronuX.svg" alt="">
+                    <!-- <i class="fa-solid fa-diamond"></i> -->
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">AstronuX</span>
+                    <span class="name">Astronu<span class="first-color">X</span></span>
                     <span class="profession"></span>
                 </div>
             </div>

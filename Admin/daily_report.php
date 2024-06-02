@@ -20,7 +20,7 @@ require_once './navbar.php';
                 <span>To</span>
             </div>
             <div class="">
-                <button class="button-1 head-button"><i class="fa-solid fa-filter"></i>Filter</button>
+                <button class="button-1 head-button" id="filter"><i class="fa-solid fa-filter"></i>Filter</button>
             </div>
             <div class="export-div">
                 <a href="./excel/Report.xlsx"><button class="button-1 head-button">Export<i
@@ -200,7 +200,7 @@ require_once './navbar.php';
 
 
     $(document).ready(function () {
-        $('#filter').on('submit', function (event) {
+        $('#filter').on('click', function (event) {
             event.preventDefault();
             let fromDate = $('#from-date').val();
             let toDate = $('#to-date').val();
@@ -228,18 +228,41 @@ require_once './navbar.php';
 
             //Check captcha value
             if (fromDate != null && fromDate != "" && toDate != null && toDate != "") {
+                //1 :->Daily Report Filter
+                let filterType = 1;
                 console.log(fromDate);
                 console.log(toDate);
                 var formData = {
+                    filterType: filterType,
                     fromDate: fromDate,
                     toDate: toDate
                 }
                 $.ajax({
                     type: 'POST',
-                    url: 'get_daily_report.php',
+                    // url: 'get_daily_report.php',
+                    url: 'filter.php',
                     data: formData,
                     success: function (response) {
-                        $('#display').html(response);
+                        const data = JSON.parse(response);
+                        console.log(data);
+                        const tbody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+                        tbody.innerHTML = '';
+
+                        let sn = 1;
+                        data.forEach(row => {
+                            const tr = document.createElement('tr');
+                            tr.innerHTML = `
+                                <td>${sn++}</td>
+                                <td>${row.vehicle_number}</td>
+                                <td>${row.fullname}</td>
+                                <td>${row.company_name}</td>
+                                <td>${row.check_in_date}</td>
+                                <td>${row.check_in_km}</td>
+                                <td>${row.check_out_km}</td>
+                                <td>${row.total_km}</td>
+                            `;
+                        })
+                        // $('#display').html(response);
                     },
                     error: function (xhr, status, error) {
                         console.error(xhr.responseText);

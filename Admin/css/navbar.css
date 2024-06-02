@@ -83,6 +83,10 @@ header .image-text .name {
   font-weight: 600;
 }
 
+.first-color {
+  color: var(--primary-color);
+}
+
 header .image-text .profession {
   font-size: 16px;
   margin-top: -2px;
