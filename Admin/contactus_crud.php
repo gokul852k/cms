@@ -9,18 +9,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $help_phone = $_POST['help-phone'];
     $help_message = $_POST['help-message'];
 
-    try {
-        $stmt = $conn->prepare("INSERT INTO `help` (`company_id`, `help_name`, `help_phone`, `help_message`) VALUES (:companyId, :help_name, :help_phone, :help_message)");
+    if ($help_name != "" && $help_phone != "" && $help_message != "") {
+        try {
+            $stmt = $conn->prepare("INSERT INTO `help` (`company_id`, `help_name`, `help_phone`, `help_message`) VALUES (:companyId, :help_name, :help_phone, :help_message)");
 
-        $stmt->bindParam(':companyId', $companyId);
-        $stmt->bindParam(':help_name', $help_name);
-        $stmt->bindParam(':help_phone', $help_phone);
-        $stmt->bindParam(':help_message', $help_message);
+            $stmt->bindParam(':companyId', $companyId);
+            $stmt->bindParam(':help_name', $help_name);
+            $stmt->bindParam(':help_phone', $help_phone);
+            $stmt->bindParam(':help_message', $help_message);
 
 
-        $stmt->execute();
+            $stmt->execute();
 
-        echo '
+            echo '
             <script>
                 Swal.fire({
                     title: "Success",
@@ -33,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 });
             </script>
         ';
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        echo '
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            echo '
                 <script>
                     Swal.fire({
                         title: "Error",
@@ -48,7 +49,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     });
                 </script>
             ';
+        }
+    }else {
+        echo '
+                <script>
+                    Swal.fire({
+                        title: "Alert",
+                        text: "Fill Out all fields.",
+                        icon: "warning"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "contactus.php";
+                        }
+                    });
+                </script>
+            ';
     }
+    
 
 
 } else {

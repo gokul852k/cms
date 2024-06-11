@@ -31,7 +31,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="form-group disp">
                         <!-- <label for="fuel-type" class="margin">Fuel Type</label> -->
                         <select id="fuel-type" name="fuel-type" class="form-control select" required>
-                            <option value="" disabled selected>Select Fuel Type</option>
+                            <option value="" disabled selected>Select Fuel Type:</option>
                             <?php
                             foreach ($rows as $row) {
                             ?>

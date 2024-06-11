@@ -62,17 +62,17 @@ $companyId = $_SESSION['companyId'];
 
             <form action="contactus_crud.php" method="POST" autocomplete="off">
                 <h3 class="title">Contact us</h3>
-                <div class="input-container">
+                <div class="input-container bgc">
                     <input type="text" id="help-name" name="help-name" class="input" />
                     <label for="">Username</label>
                     <span>Username</span>
                 </div>
-                <div class="input-container">
-                    <input type="tel" id="help-phone" name="help-phone" class="input" />
+                <div class="input-container bgc">
+                    <input type="number" id="help-phone" name="help-phone" class="input p-num" />
                     <label for="">Phone</label>
                     <span>Phone</span>
                 </div>
-                <div class="input-container textarea">
+                <div class="input-container textarea bgc">
                     <textarea id="help-message" name="help-message" class="input"></textarea>
                     <label for="">Message</label>
                     <span>Message</span>
@@ -89,13 +89,13 @@ $companyId = $_SESSION['companyId'];
 
     function focusFunc() {
         let parent = this.parentNode;
-        parent.classList.add("focus");
+        parent.classList.add("focuses");
     }
 
     function blurFunc() {
         let parent = this.parentNode;
         if (this.value == "") {
-            parent.classList.remove("focus");
+            parent.classList.remove("focuses");
         }
     }
 

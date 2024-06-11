@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 2rem;
   background-color: #fafafa;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,6 +65,27 @@ form {
   z-index: 10;
   overflow: hidden;
   position: relative;
+}
+
+.p_text{
+  text-align: justify;
+}
+
+/* Remove arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Remove arrows in Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows in Internet Explorer */
+input[type="number"] {
+  -ms-appearance: none;
 }
 
 .title {
@@ -175,17 +196,22 @@ textarea.input {
   right: 50%;
 }
 
-.input-container.focus label {
+.input-container.focuses label {
   top: 0;
   transform: translateY(-50%);
   left: 25px;
   font-size: 0.8rem;
 }
 
-.input-container.focus span:before,
-.input-container.focus span:after {
+.input-container.focuses span:before,
+.input-container.focuses span:after {
   width: 50%;
   opacity: 1;
+}
+
+.bgc:focus {
+  /* background-color: var(--body-color); */
+  border: 2px solid var(--primary-color);
 }
 
 .contact-info {
@@ -318,10 +344,6 @@ textarea.input {
       bottom: 75%;
       transform: scale(0.9) translate(-40%, 30%);
       right: 50%;
-  }
-
-  .p_text{
-    text-align: justify;
   }
 
   .text {
